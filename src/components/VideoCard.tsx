@@ -12,23 +12,22 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
   return (
-    <Card sx={{ width: 345, maxWidth: '100%' }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={video.image_url}
+    <div className="card" style={{ width: '345px', maxWidth: '100%' , backgroundColor: 'lightyellow' }}>
+      <img
+        src={video.image_url}
         alt={video.title}
+        style={{ width: '100%', height: '140px', objectFit: 'cover' }}
         loading="lazy"
       />
-      <CardContent sx={{ textAlign: 'center', backgroundColor: 'lightyellow' }}>
-        <Typography variant="body2" color="text.secondary" style={{ textAlign: 'center' }}>
+      <div className="card-content" style={{ textAlign: 'center' }}>
+        <p className="card-text" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
           {video.artist}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" style={{ textAlign: 'center' }}>
+        </p>
+        <p className="card-text" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
           {video.release_year}
-        </Typography>
-      </CardContent>
-    </Card>
+        </p>
+      </div>
+    </div>
   );
 };
 
