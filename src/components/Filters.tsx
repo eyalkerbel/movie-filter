@@ -2,8 +2,7 @@ import React from 'react';
 import { TextField, Grid, Autocomplete, Checkbox, FormControl, InputLabel, Select, MenuItem, OutlinedInput } from '@mui/material';
 import { Genre } from '../types';
 import { SelectChangeEvent } from '@mui/material/Select';
-import {useVideoContext} from "./context/Video";
-
+import { useVideoContext } from "./context/Video";
 
 const Filters: React.FC = () => {
   const { filters, setFilters, genres, years } = useVideoContext();
@@ -13,7 +12,7 @@ const Filters: React.FC = () => {
   };
 
   const handleYearChange = (event: SelectChangeEvent) => {
-    setFilters({ ...filters, selectedYear: event.target.value as string });
+    setFilters({ ...filters, selectedYear: event.target.value });
   };
 
   const handleGenresChange = (event: React.ChangeEvent<{}>, value: Genre[]) => {
@@ -38,7 +37,9 @@ const Filters: React.FC = () => {
             value={filters.selectedYear}
             onChange={handleYearChange}
             input={<OutlinedInput label="Year" />}
+            displayEmpty // This prop makes sure the placeholder is displayed
           >
+            <MenuItem value="">All Years</MenuItem> {/* Reset option */}
             {years.map((year) => (
               <MenuItem key={year} value={year.toString()}>
                 {year}
