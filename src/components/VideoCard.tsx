@@ -1,9 +1,5 @@
 import React from 'react';
 import { Video } from '../types';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 
 interface VideoCardProps {
   video: Video;

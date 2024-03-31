@@ -9,7 +9,7 @@ const Wrapper: React.FC = () => {
 
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh"   style={{ padding: '1rem' }}>
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh"  style={{ padding: '1rem' }}>
         <CircularProgress />
       </Box>
     );
